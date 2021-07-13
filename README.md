@@ -22,7 +22,7 @@ The compose file provides the following dependencies:
 
    - Create `.env` file from `.env.sample`
 
-     `$ cp .env.sample`
+     `$ cp .env.sample .env`
 
    - Open `.env` file and configure appropiatelly depending on the environment [1](#remarks)
 
@@ -36,7 +36,7 @@ The compose file provides the following dependencies:
 
 5. Run dependencies in Docker
 
-   `docker compose up`
+   `docker compose up -d`
 
 6. Execute migrations
 

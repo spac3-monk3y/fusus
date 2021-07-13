@@ -1,0 +1,9 @@
+Django==3.2.5
+requests==2.25.1
+responses==0.13.3
+django-filter==2.4.0
+psycopg2-binary==2.9.1
+pydantic[dotenv]==1.8.2
+djangorestframework==3.12.4
+djangorestframework-simplejwt==4.7.2
+django-phonenumber-field[phonenumbers]==5.2.0

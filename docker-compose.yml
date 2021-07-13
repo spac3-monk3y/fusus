@@ -1,0 +1,33 @@
+version: "3.9"
+
+services:
+
+  default_db:
+    image: postgres:13
+    restart: unless-stopped
+    ports:
+      - ${DB_DEFAULT_PORT:-5432}:5432
+    env_file:
+      - .env
+    volumes:
+      - ${PWD}/dev/dbs/pgdata:/var/lib/postgresql/data
+    environment:
+      - POSTGRES_DB=${DB_DEFAULT_NAME}
+      - POSTGRES_USER=${DB_DEFAULT_USER}
+      - POSTGRES_PASSWORD=${DB_DEFAULT_PASSWORD}
+
+  # TODO: add support for fully dockerized environment
+  # app:  
+  #   build: .
+  #   restart: unless-stopped
+  #   ports:
+  #     - "8000:8000"
+  #   profiles: [full]
+  #   env_file:
+  #     - .env
+  #   environment:
+  #     - DB_DEFAULT_HOST=default_db
+  #   depends_on:
+  #     - localstack
+  #     - redis
+  #     - default_db
